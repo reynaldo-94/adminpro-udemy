@@ -1,1 +1,47 @@
-<p>progress works!</p>
+<!-- El Progress es un componente en el cual yo quiero manipular los progress bar que tiene el bootstrap -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Barra de progreso</h4>
+
+                <div class="progress">
+                    <!-- Creo un atributo que lo va a manejar angular y que se va a llamar ariaValueNow y va a ser igual al progreso -->
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [attr.ariaValueNow]="progreso1" aria-valuemin="0" aria-valuemax="100" [style.width]="progreso1 + '%'"></div>
+                </div>
+                <br/>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" [attr.ariaValueNow]="progreso2" aria-valuemin="0" aria-valuemax="100" [style.width]="progreso2 + '%'"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+
+                <!-- Si no pongo entre corchete,eso se entiende que es un string, cuando le pongo entrre corchete, es igual al tipo de variable donde envio estos datos, en este caso seria un input -->
+                <!-- cambioValor = "Pongo el nombre de la funcion cuando el evento sea emitido" -->
+                <app-incrementador (actualizaValor)="progreso1 = $event" nombre="Progress Azul" [progreso]="progreso1"></app-incrementador>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+
+                <app-incrementador (actualizaValor)="progreso2 = $event" nombre="Progress Verde" [progreso]="progreso2"></app-incrementador>
+
+            </div>
+        </div>
+    </div>
+
+</div>

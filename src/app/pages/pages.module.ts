@@ -3,8 +3,13 @@ import { NgModule } from '@angular/core';
 // Modulos
 import { SharedModule } from '../shared/shared.module';
 
+import { FormsModule } from '@angular/forms';
+
 // Rutas
 import { PAGES_ROUTES } from './pages.routes';
+
+// ng2-charts
+import { ChartsModule } from 'ng2-charts';
 
 // Componentes
 import { PagesComponent } from './pages.component';
@@ -12,6 +17,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 
+// Temporal
+import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
+import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 
 @NgModule({
     // tslint:disable-next-line: max-line-length
@@ -20,7 +28,9 @@ import { Graficas1Component } from './graficas1/graficas1.component';
         PagesComponent,
         DashboardComponent,
         ProgressComponent,
-        Graficas1Component
+        Graficas1Component,
+        IncrementadorComponent,
+        GraficoDonaComponent
     ],
     // Ponemos todos los componentes o servicios que nosotros ocupamos que sean accesados desde fuera de este modulo
     exports: [
@@ -31,7 +41,9 @@ import { Graficas1Component } from './graficas1/graficas1.component';
     ],
     imports: [
        SharedModule,
-       PAGES_ROUTES
+       PAGES_ROUTES,
+       FormsModule,
+       ChartsModule
     ]
 })
 
