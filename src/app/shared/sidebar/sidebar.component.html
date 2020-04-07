@@ -13,18 +13,25 @@
                         <li><a href="javascript:void()">My Profile </a></li>
                         <li><a href="javascript:void()">My Balance</a></li>
                         <li><a href="javascript:void()">Inbox</a></li>
-                        <li><a href="javascript:void()">Account Setting</a></li>
-                        <li><a href="javascript:void()">Logout</a></li>
+                        <!-- Me cambia de pagina sin necesida de usar router-links, porque usando el hash(#) ralmente estamos cambiando la url, y pues eso funciona correctamente, el problema de usarlo de esta forma es que no voy a poder asignarle una clase, y no voy a poder enviar parametros directamente como variables de angular, por eso es mejor hacerlo con router-links -->
+                        <!-- <li><a href="#/account-settings">Account Setting</a></li> -->
+                        <!-- Para que el router link funcione tenemos que importarlo en el shared.module.ts -->
+                        <li><a routerLinkActive="active" routerLink="#/account-settings">Account Setting</a></li>
+                        <li><a routerLink="/login">Logout</a></li>
                     </ul>
                 </li>
                 <li class="nav-devider"></li>
                 <li class="nav-small-cap">PERSONAL</li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-themecolor pull-right">4</span></span></a>
+                <li *ngFor="let menu of _sidebar.menu">
+                    <a class="has-arrow waves-effect waves-dark" aria-expanded="false"><i [class]="menu.icono"></i><span class="hide-menu">{{ menu.titulo }} <span class="label label-rouded label-themecolor pull-right">{{ menu.submenu.length }}</span></span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="index.html">Minimal </a></li>
-                        <li><a href="index2.html">Analytical</a></li>
+                        <li *ngFor="let submenu of menu.submenu">
+                            <!-- Lo pongo entre corchetes, porque mas adelante capaz le enviaremos parametros -->
+                            <a routerLinkActive="active" [routerLink]="[ submenu.url ]">{{ submenu.titulo }}</a>
+                        </li>
+                        <!-- <li><a href="index2.html">Analytical</a></li>
                         <li><a href="index3.html">Demographical</a></li>
-                        <li><a href="index4.html">Modern</a></li>
+                        <li><a href="index4.html">Modern</a></li> -->
                     </ul>
                 </li>
             </ul>
