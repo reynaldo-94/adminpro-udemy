@@ -4,6 +4,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 const pagesRoutes: Routes = [
@@ -11,11 +13,14 @@ const pagesRoutes: Routes = [
         path: '',
         component: PagesComponent,
         // Defino hijos,Defino un arreglo secundario, con el router o roulet secundario
+        // Todas las rutas tienen una propiedad llamada data, es opcional, esta data puede ser cualquier cosa, puede ser un sintrg, un booleano,cualquier cosa, es un objeto, pero para pasar data yo ls recomendaria siempre que la graben dentro de un objeto(de llaves cuadradas) px usteden pueden definir mas observacion
         children: [
-            { path: 'dashboard', component: DashboardComponent},
-            { path: 'progress', component: ProgressComponent},
-            { path: 'graficas1', component: Graficas1Component},
-            { path: 'account-settings', component: AccountSettingsComponent},
+            { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard'} },
+            { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress'} },
+            { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Gráficas'} },
+            { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas'} },
+            { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs'} },
+            { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del tema'} },
             // La ruta cuando no existe ninguna ruta
             { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
         ]
