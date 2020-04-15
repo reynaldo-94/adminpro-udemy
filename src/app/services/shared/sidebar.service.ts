@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class SidebarService {
 
-  // Es un arreglo de objetos, cada objeto va a tenr un titulo
+  // Es un arreglo de objetos, cada objeto va a tener un titulo
   menu: any = [
     {
       titulo: 'Principal',

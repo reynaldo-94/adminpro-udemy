@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef }
 export class IncrementadorComponent implements OnInit {
 
   // Este elemento recibe como parametro una referecia de un elemento html, y esa referencia lo creo, en este caso le pongo #txtProgress, de lado de Typescript le pongo de nombre tambien txtProgress(puede ser otro nombre)
-  // Con esto ya tengo una referencia sin iportar en eque componente estoy
+  // Con esto ya tengo una referencia sin importar en que componente estoy
   @ViewChild('txtProgress') txtProgress: ElementRef;
 
   // Puedo definir un valor por defecto, ya sea aca, o en el constructor o en ngOnInit

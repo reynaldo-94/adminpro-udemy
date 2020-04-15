@@ -9,15 +9,15 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 
 @NgModule ({
-    imports: [
-        RouterModule,
-        CommonModule
-    ],
     declarations: [
         HeaderComponent,
         SidebarComponent,
         BreadcrumbsComponent,
         NopagefoundComponent
+    ],
+    imports: [
+        RouterModule,
+        CommonModule
     ],
     // Pongo exports porque hay componentes que deben de ser usadas fuera
     exports: [

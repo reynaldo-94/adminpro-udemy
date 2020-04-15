@@ -14,7 +14,7 @@ export class SettingsService {
   };
 
   // Hacer una referencia a todo el DOM como tal
-  // Es un tipo de injeccion, igual como las injecciones de serivico, solo que como est forma
+  // Es un tipo de injeccion, igual como las injecciones de servicio, solo que como esta forma
   // Con el objeto _document ya tengo acceso a todo el DOM
   // tslint:disable-next-line: variable-name
   constructor( @Inject(DOCUMENT) private _document ) {
@@ -24,7 +24,7 @@ export class SettingsService {
   guardarAjustes() {
     // Va a grabar estos ajustes en el localStorage, el localStorage solo graba datos en formato string o string
     // console.log('Guardado en el local Storage');
-    // JSON.stringfy : TOma un objeto y lo convierte en un string
+    // JSON.stringfy : Toma un objeto y lo convierte en un string
     localStorage.setItem('ajustes', JSON.stringify( this.ajustes ) );
   }
 
@@ -56,7 +56,7 @@ export class SettingsService {
 
 
 
-// Me va a yudar a mi a poder restringirme la forma de trabajar los ajustes
+// Me va a ayudar a mi a poder restringirme la forma de trabajar los ajustes
 interface Ajustes {
   // Esto me ayuda a restringirme a mi mismo que tipo de informacion van a permitirse en los ajustes
   temaUrl: string;

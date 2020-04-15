@@ -8,8 +8,8 @@ import { SettingsService } from './services/service.index';
 })
 export class AppComponent {
 
-  // Aca es lo carga al principio en el app.component
-  // Inyecto lel servicio de ajustes, cuando es inyectado utomaticamente me dispare la funcion de cargar ajustes
+  // Aca es lo que carga al principio en el app.component
+  // Inyecto el servicio de ajustes, cuando es inyectado automaticamente me dispara la funcion de cargar ajustes
   constructor( public _ajustes: SettingsService) {
 
   }

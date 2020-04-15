@@ -40,7 +40,7 @@ export class PromesasComponent implements OnInit {
           clearInterval(intervalo);
         }
 
-      }, 1000 ); // Quese dispare cada segundo
+      }, 1000 ); // Que se dispare cada segundo
 
     });
 

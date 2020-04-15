@@ -13,11 +13,11 @@
                         <li><a href="javascript:void()">My Profile </a></li>
                         <li><a href="javascript:void()">My Balance</a></li>
                         <li><a href="javascript:void()">Inbox</a></li>
-                        <!-- Me cambia de pagina sin necesida de usar router-links, porque usando el hash(#) ralmente estamos cambiando la url, y pues eso funciona correctamente, el problema de usarlo de esta forma es que no voy a poder asignarle una clase, y no voy a poder enviar parametros directamente como variables de angular, por eso es mejor hacerlo con router-links -->
+                        <!-- Me cambia de pagina sin necesidad de usar router-links, porque usando el hash(#) realmente estamos cambiando la url, y pues eso funciona correctamente, el problema de usarlo de esta forma es que no voy a poder asignarle una clase, y no voy a poder enviar parametros directamente como variables de angular, por eso es mejor hacerlo con router-links -->
                         <!-- <li><a href="#/account-settings">Account Setting</a></li> -->
                         <!-- Para que el router link funcione tenemos que importarlo en el shared.module.ts -->
                         <li><a routerLinkActive="active" routerLink="#/account-settings">Account Setting</a></li>
-                        <li><a routerLink="/login">Logout</a></li>
+                        <li><a (click)="_usuarioService.logout()" class="pointer">Logout</a></li>
                     </ul>
                 </li>
                 <li class="nav-devider"></li>
