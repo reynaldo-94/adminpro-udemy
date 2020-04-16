@@ -24,11 +24,12 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 // Temporal
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { UsuariosComponent } from './usuarios/usuarios.component';
 @NgModule({
     // tslint:disable-next-line: max-line-length
     /* Cuando trabajamos con modulos puede ser que estas paginas solo nos sirvan para trabajar dentro de estas mismas paginas, pero en nuestro caso esta paginas tambien tiene que ser usadas por otros componentes que se encuentran fuera de este modulo por lo cual vamos a exportarlas */
@@ -42,7 +43,9 @@ import { ProfileComponent } from './profile/profile.component';
         AccountSettingsComponent,
         PromesasComponent,
         RxjsComponent,
-        ProfileComponent
+        ProfileComponent,
+        UsuariosComponent,
+        ModalUploadComponent
     ],
     // Ponemos todos los componentes o servicios que nosotros ocupamos que sean accesados desde fuera de este modulo
     exports: [

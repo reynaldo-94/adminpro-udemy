@@ -10,6 +10,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuardGuard } from '../services/guards/login-guard.guard';
 
 import { ProfileComponent } from './profile/profile.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
 const pagesRoutes: Routes = [
@@ -20,6 +21,7 @@ const pagesRoutes: Routes = [
         // Defino hijos,Defino un arreglo secundario, con el router o roulet secundario
         // Todas las rutas tienen una propiedad llamada data, es opcional, esta data puede ser cualquier cosa, puede ser un string, un booleano,cualquier cosa, es un objeto, pero para pasar data les recomendaria siempre que la graben dentro de un objeto(de llaves cuadradas) px asi usteden pueden definir mas observaciones
         children: [
+            // Generales
             { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard'} },
             { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress'} },
             { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Gráficas'} },
@@ -27,6 +29,8 @@ const pagesRoutes: Routes = [
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs'} },
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del tema'} },
             { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario'} },
+            // Mantenimientos
+            { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimiento de usuarios'} },
             // La ruta cuando no existe ninguna ruta
             { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
         ]

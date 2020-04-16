@@ -20,7 +20,7 @@ export class BreadcrumbsComponent implements OnInit {
   ) {
     this.getDataRote()
     .subscribe( data => {
-      console.log(data);
+      //console.log(data);
       this.titulo = data.titulo;
       // Me actualiza la etiqueta <title> del html
       this.title.setTitle(this.titulo);
