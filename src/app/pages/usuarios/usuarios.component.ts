@@ -82,7 +82,7 @@ export class UsuariosComponent implements OnInit {
     }
 
     swal({
-      title: 'Está seguro?',
+      title: 'Estás seguro?',
       text: 'Está a punto de borrar  a ' + usuario.nombre,
       icon: 'warning',
       buttons: [true, true],

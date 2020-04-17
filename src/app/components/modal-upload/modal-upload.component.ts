@@ -29,7 +29,7 @@ export class ModalUploadComponent implements OnInit {
     this.imagenTemp = null;
     this.imagenSubir = null;
 
-    this._modalUploadService.ocultarModal()
+    this._modalUploadService.ocultarModal();
   }
 
   seleccionImagen( archivo: File ) {
@@ -59,11 +59,13 @@ export class ModalUploadComponent implements OnInit {
     this._subirArchiService.subirArchivo( this.imagenSubir, this._modalUploadService.tipo, this._modalUploadService.id )
         .then( resp => {
           console.log( resp );
+          // Si se sube la imagen tengo que emitir que ya se subio la imagen, como hago para emitir a todo el mundo que esta escuchado o esta pendiente que ya se subio la imagen, hacemos el llamado del objeto del sevicio
           this._modalUploadService.notificacion.emit( resp );
+          // Una vez emitamos el modal se oculta
           this.cerrarModal();
         })
         .catch( err => {
-          console.log( 'Erro en la carga...' );
+          console.log( 'Error en la carga...' );
         });
   }
 

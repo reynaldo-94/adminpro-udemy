@@ -30,6 +30,9 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 @NgModule({
     // tslint:disable-next-line: max-line-length
     /* Cuando trabajamos con modulos puede ser que estas paginas solo nos sirvan para trabajar dentro de estas mismas paginas, pero en nuestro caso esta paginas tambien tiene que ser usadas por otros componentes que se encuentran fuera de este modulo por lo cual vamos a exportarlas */
@@ -45,7 +48,10 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
         RxjsComponent,
         ProfileComponent,
         UsuariosComponent,
-        ModalUploadComponent
+        ModalUploadComponent,
+        HospitalesComponent,
+        MedicosComponent,
+        MedicoComponent
     ],
     // Ponemos todos los componentes o servicios que nosotros ocupamos que sean accesados desde fuera de este modulo
     exports: [
