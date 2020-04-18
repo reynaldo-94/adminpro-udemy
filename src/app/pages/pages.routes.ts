@@ -7,19 +7,21 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 
-import { LoginGuardGuard } from '../services/guards/login-guard.guard';
+import { LoginGuardGuard, AdminGuard } from '../services/service.index';
 
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 const pagesRoutes: Routes = [
     {
         path: '',
         component: PagesComponent,
+        // Cada una de las rutas ya esta pasando por el LoginGuards
         canActivate: [ LoginGuardGuard ],
         // Defino hijos,Defino un arreglo secundario, con el router o roulet secundario
         // Todas las rutas tienen una propiedad llamada data, es opcional, esta data puede ser cualquier cosa, puede ser un string, un booleano,cualquier cosa, es un objeto, pero para pasar data les recomendaria siempre que la graben dentro de un objeto(de llaves cuadradas) px asi usteden pueden definir mas observaciones
@@ -32,8 +34,14 @@ const pagesRoutes: Routes = [
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs'} },
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del tema'} },
             { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario'} },
+            { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Buscador'} },
             // Mantenimientos
-            { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimiento de usuarios'} },
+            {
+                path: 'usuarios',
+                component: UsuariosComponent,
+                canActivate: [ AdminGuard ],
+                data: { titulo: 'Mantenimiento de usuarios'}
+            },
             { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Mantenimiento de hospitales'} },
             { path: 'medicos', component: MedicosComponent, data: { titulo: 'Mantenimiento de médicos'} },
             { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar médico'} },
