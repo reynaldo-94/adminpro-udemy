@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { UsuarioService } from '../usuario/usuario.service';
 import { Medico } from '../../models/medico.model';
 
-declare var swal: any;
+import swal from 'sweetalert';
 
 @Injectable({
   providedIn: 'root'

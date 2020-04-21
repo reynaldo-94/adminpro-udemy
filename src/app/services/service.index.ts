@@ -1,6 +1,7 @@
 // Guards
 export { LoginGuardGuard } from './guards/login-guard.guard';
 export { AdminGuard } from './guards/admin.guard';
+export { VerificaTokenGuard } from './guards/verifica-token.guard';
 // Ya tengo todos los servicios, lo estoy usando en un archivo unico, cambio el import por el export, lo que quiero es tomar estos servicios y exportarlos, en caso de que al dia de mañana yo decida mover setting.service a otra carpeta, esta es la unica referecia directa al path de este archivo
 export { SubirArchivoService } from './subir-archivo/subir-archivo.service';
 export { UsuarioService  } from './usuario/usuario.service';

@@ -28,6 +28,30 @@ export class UsuarioService {
   ) {
     this.cargarStorage();
   }
+
+  renuevaToken() {
+    let url = URL_SERVICIOS + '/login/renuevatoken';
+    url += '?token=' + this.token;
+
+    // Llamamos
+    return this.http.get( url )
+                  .pipe(
+                    map( (resp: any) => {
+                      // Cambio el token por el token nuevo
+                      this.token = resp.token;
+                      // Grabo en el local storage el nuevo token
+                      localStorage.setItem('token', this.token);
+                      console.log('Token renovado');
+                      return true;
+                    }),
+                    catchError(err => {
+                      this.router.navigate(['/login']);
+                      // En caso no pueda renovar el token, me da un error
+                      swal( 'No se pudo renovar token', 'No fue posible renovar token', 'error');
+                      return Observable.throw( err );
+                    })
+                  );
+  }
   // Lo unico que quiero hacer aca es que si existe el token esta logeado y si no existe no esta logeado, esto podra ser una vaildacion senciclla de este lado del front end pero recerden que todos nuestro servicions en el backend estan protegidos, asi que aunque la persona conociera alguna maner de evadir esto siempre va a chocar con las validciones que tenemos en el backend
   estaLogueado() {
     return ( this.token.length > 5 ) ? true : false;
